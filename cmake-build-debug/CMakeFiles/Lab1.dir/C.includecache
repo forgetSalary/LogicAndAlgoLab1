@@ -1,0 +1,54 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Logic and Algo Labs/Lab1/main.c
+task1.h
+D:/Logic and Algo Labs/Lab1/task1.h
+task3.h
+D:/Logic and Algo Labs/Lab1/task3.h
+task4.h
+D:/Logic and Algo Labs/Lab1/task4.h
+task5.h
+D:/Logic and Algo Labs/Lab1/task5.h
+
+D:/Logic and Algo Labs/Lab1/task1.h
+stdio.h
+-
+
+D:/Logic and Algo Labs/Lab1/task2.h
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+
+D:/Logic and Algo Labs/Lab1/task3.h
+stdio.h
+D:/Logic and Algo Labs/Lab1/stdio.h
+stdlib.h
+-
+time.h
+-
+
+D:/Logic and Algo Labs/Lab1/task4.h
+task2.h
+D:/Logic and Algo Labs/Lab1/task2.h
+
+D:/Logic and Algo Labs/Lab1/task5.c
+task5.h
+D:/Logic and Algo Labs/Lab1/task5.h
+
+D:/Logic and Algo Labs/Lab1/task5.h
+stdio.h
+D:/Logic and Algo Labs/Lab1/stdio.h
+stdlib.h
+-
+string.h
+-
+
