@@ -11,9 +11,10 @@ void example2(){
 
     init_randomArr(numbers,SIZE);
 
-
+    printf("Random array:");
     for (int i = 0; i < SIZE; i++){
-        printf("%d\n",numbers[i]);
+        printf("%d,",numbers[i]);
     }
+    printf("\n");
 }
 

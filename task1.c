@@ -19,11 +19,16 @@ int sumMaxMin(int *arr,int size){
 
     return max;
 }
-void example(){
+void example1(){
     int numbers[SIZE]={6,12,3,4,18,5,7,8,17,10,11,2,13,15,14,16,9,18,19,5};
     int sum;
 
     sum=sumMaxMin(numbers,SIZE);
 
-    printf("%d",sum);
+    printf("Array: ");
+    for (int i=1; i<SIZE; i++){
+        printf("%d,",numbers[i]);
+    }
+
+    printf("\nMax - min=%d\n",sum);
 };
