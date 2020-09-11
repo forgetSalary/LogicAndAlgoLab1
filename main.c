@@ -6,6 +6,7 @@
 
 int main() {
 
+    example4();
 
     return 0;
 }

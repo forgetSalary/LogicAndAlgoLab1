@@ -1,31 +1,41 @@
 #include "task4.h"
-#define rowsN 10
-#define colsN 15
 
-void outputResult(int* arr, int* result,int rw, int cl){
-    for (int i=0; i<rw; i++){
-        for (int j=0; j<cl; j++){
-            printf("%d,",*arr);
+void arrOutput(int* arr,int r,int c){
+    printf("-------------------------------------------------------------\n");
+    for (int i=0; i<r; i++){
+        for (int j=0; j<c; j++){
+            printf("%3d|",*arr);
             arr++;
         }
-        printf("\tSum=%d\n",*(result+i));
+        printf("\n-------------------------------------------------------------\n");
     }
 }
 
-void sumInRows(int* arr, int* result,int rowsNumber, int colsNumber){
+void sumInRows(int* arr,int rowsNumber, int colsNumber){
+    int* result=(int*)calloc(rowsNumber,sizeof(int));
+
+    printf("\nSummi v strokah\n");
     for (int i=0; i<rowsNumber; i++){
         for (int j=0; j<colsNumber; j++){
-            *(result+i)+=*arr;
+            result[i]+=*arr;
             arr++;
         }
+        printf("Stroka%d:%d\n",i+1,result[i]);
     }
 }
 
-void sumInCols(int** arr, int* result,int rowsNumber, int colsNumber){
+void sumInCols(int* arr,int rowsNumber, int colsNumber){
+    int* result=(int*)calloc(colsNumber,sizeof(int));
+
+    printf("\nSummi v stolbtsah:\n");
     for (int i=0; i<colsNumber; i++){
         for (int j=0; j<rowsNumber; j++){
-            *(result+i)+=*(*(arr+j)+i);
+            result[i]+=*arr;
+            arr+=colsNumber;
         }
+        printf("Stolbets%d:%d\n",i+1,result[i]);
+        arr-=(colsNumber*rowsNumber);
+        arr++;
     }
 }
 
@@ -36,20 +46,14 @@ void example4(){
         init_randomArr(array[i],colsN);
     }
 
-    //отводим память под результат сложения
-    int* result=(int*)calloc(rowsN,sizeof(int));
+    //вывод массива
+    arrOutput(array,rowsN,colsN);
 
     //сумма каждой строки
-    sumInRows(array,result,rowsN,colsN);
-    outputResult(array,result,rowsN,colsN);
+    sumInRows(array,rowsN,colsN);
 
     //сумма каждого столбца
-    int (*p)[colsN]=array;
-    sumInCols(p,result,rowsN,colsN);
-    outputResult(p,result,colsN,rowsN);
-
-
-
+    sumInCols(array,rowsN,colsN);
 
 
 }
